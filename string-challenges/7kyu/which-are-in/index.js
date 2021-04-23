@@ -1,23 +1,29 @@
 function inArray(array1,array2){
-    //
     
-    //1. iterate through array1
+    const result =[]
+    // iterate through array1
     for (let i = 0; i < array1.length; i++) {
-        //   iterate through array2
+        // iterate through array2
         for (let j = 0; j < array2.length; j++) {
-            //check if string in array1 is substring of a2
-            //if it is push/append string to result array
-            isSubString(array1[i], array2[j]);
+            // check if string in array1 is substring of a2
+            
+            if (isSubString(array1[i], array2[j])){
+                //if result already has the string, skip
+                if (result.includes(array1[i])) {
+                  break;
+                }
+                // add string to result
+                result.push(array1[i])
+            }
         }
     }
-    
-    
-    
-    
-    // TODO: sort the result array into lexicographical order
-    // return sorted array 
+    // sort the result array into lexicographical order
+    return result.sort();
 }
 
+/** helper function to test if the substring of A is part of B
+ *  return boolean value 
+ */
 function isSubString(stringA, stringB) {
     for (let i = 0; i < stringB.length; i++) {
         for (let j = 0; j < stringB.length + 1; j++) {
@@ -29,8 +35,6 @@ function isSubString(stringA, stringB) {
             }
         }
     }
-    
-
     return false;
 }
 
