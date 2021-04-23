@@ -44,13 +44,6 @@ function isSubString(stringA, stringB) {
     return false;
 }
 
-function main() {
-
-    console.log(isSubString("arp", "lively"));
-
-}
-
-main();
 
 
 
