@@ -5,30 +5,21 @@
    // Given an Array of words, return an array of the number of letters that occupy their positions
       in the alphabet for each word. For example,
 
-    // PER YASH: map --> split --> filter
+     map --> split --> filter
 
     // Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
 
 */
-    function numberInPosition(arr) {
-        const alphabet = "abcdefghijklmnopqrstuvwxyz";
-        // for every word: check if it matches the position in alphabet
-        const result = arr.map(word =>{
-            word.split('').reduce(function(accumulator, currentValue, currentIndex, array){
-                
-            })
-        })
-        console.log(result);
+function numberInPosition(arr) {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    // for every word: check if it matches the position in alphabet
+    const result = arr.map(word =>{
+        return word.split('').filter((letter, index)=> letter.toLowerCase() === alphabet[index]).length
         
-        // for every char in the word, if character[index] == alphabet[index]
-        // add to accumulator
-
-        // filter will only filter out the words that match their positions in alphabet
-
-
-        // Return arr the number of letters that occupy their positions
-    }
-
-
-    console.log(numberInPosition(["abode", "xyzqefgjirklm", "zxcvbnm"]), [5, 7, 1])
-    console.log(numberInPosition(["bnmdef", "poiuytrewqlkjhgfdsamnbvcxz", "gbhmerujk"]),[3,1,2])
+    });
+    return result;
+}
+        
+       
+console.log(numberInPosition(["abode", "xyzqefgjirklm", "zxcvbnm"]), [4, 7, 1])
+console.log(numberInPosition(["bnmdef", "poiuytrewqlkjhgfdsamnbvcxz", "gbhmerujk"]),[3,1,2])
