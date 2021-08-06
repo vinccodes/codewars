@@ -11,10 +11,8 @@ function domain_name(domain){
     // make copy of input string
     let domainName = domain;
     // regexp for http and https
+    let re = /(http[s]?:\/\/)(\.com)/;
     const reHttpOnly = new RegExp('http[s]?://')
-
-    // regexp for .com
-    const reCom = new RegExp('.com')
 
     console.log(domainName.match(reHttpOnly))
     // compare regexp with domain_name
