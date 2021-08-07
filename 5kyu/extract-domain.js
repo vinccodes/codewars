@@ -6,25 +6,15 @@
 
 
 
-function domain_name(domain){
+function domainName(url){
 
-    // make copy of input string
-    let domainName = domain;
-    // regexp for http and https
-    let re = /(http[s]?:\/\/)(\.com)/;
-    const reHttpOnly = new RegExp('http[s]?://')
-
-    console.log(domainName.match(reHttpOnly))
-    // compare regexp with domain_name
-
-    // Naive solution
-    // for (let i = 0; i < domain.length; i++) {
-    //     // get up to index string concatenated
-
-    //     // compare regexp with domain_name
-
-    //     // if it matches, chop off regexp with ''
-    // }
+    // regexp
+    let re = /(http[s]?:\/\/)(\w*\.?\w+)(\.\w+)/;
+    const result = url.match(re);
+    console.log(result)
+    // get domain name from result array via array index
+    const name = result[2];
+    return name;
 }
 
 console.log(domain_name("http://google.com"), "google")
